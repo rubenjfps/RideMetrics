@@ -197,3 +197,4 @@ Desktop.ini
 # Docker local overrides, which may contain secrets
 docker-compose.override.yml
 compose.override.yaml
+brainstorming.txt

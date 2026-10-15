@@ -1,6 +1,8 @@
-from fastapi import FastAPI
 from sqlalchemy import text
 from app.database import engine
+from fastapi import FastAPI
+
+from app.routes.activities import router as activities_router
 app = FastAPI(
     title="RideMetrics API",
     description="API for cycling activity analytics",
@@ -39,3 +41,5 @@ def database_health_check():
             "status": "error",
             "database": "unavailable",
         }
+
+app.include_router(activities_router)
